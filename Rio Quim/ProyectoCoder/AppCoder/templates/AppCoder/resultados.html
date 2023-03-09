@@ -1,0 +1,28 @@
+{% extends "AppCoder/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} 
+
+
+RIO - QUIM
+
+
+{% endblock %}
+
+
+{% block presentacion %} 
+
+
+<p>Estas buscando el producto: {{busqueda}} </p> 
+
+{% for objeto in productos %}
+
+    <p style="color:black"> {{objeto.elemento}} ${{objeto.precio}}   </p>
+    
+
+{% endfor %}
+    
+ 
+{% endblock %}
+

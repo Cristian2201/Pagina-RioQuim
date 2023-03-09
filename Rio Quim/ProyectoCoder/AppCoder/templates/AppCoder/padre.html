@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Pagina Web- RIO QUIM - Local Principal</title>
+        <link rel="icon" type="image/x-icon" href="{% static 'AppCoder/assets/favicon.ico'%}" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'AppCoder/css/styles.css'%}" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+            <h1 class="site-heading text-center text-faded d-none d-lg-block">
+                
+             {% block titulo %} 
+
+
+             {% endblock %}
+
+            </h1>
+        </header>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase fw-bold d-lg-none" href="index.html">PAGINA WEB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto">
+
+                        {% if request.user.is_authenticated  %}
+                        <p style= "color: Yellow;text-transform: uppercase"> HOLA {{user.username}} </p>
+
+                        {% with user.avatar_set.first  as miAvatar  %}
+
+                        {% if miAvatar  %}
+                        
+
+                        <img src ="{{miAvatar.imagen.url}}" alt="No encontro la imagen" style="max-width: 300px;">
+
+                        {% endif %}                       
+                        
+                        {% endwith %}
+
+                        {% endif %}
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Inicio' %}">Inicio</a></li>  
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'ProductosLeer' %}">Productos</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Busqueda' %}">Busqueda</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Tienda' %}">Tienda</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Nosotros' %}">Nosotros</a></li>
+
+                        {% if request.user.is_authenticated  %}
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Avatar' %}">Agregar avatar</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Logout' %}">Cerrar sesión</a></li>
+                        
+                        {% else %}
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'SingUp' %}">Registrarse</a></li>
+                        <li class="nav-item px-lg-4"><a class="nav-link text-uppercase" href="{% url 'Login' %}">Iniciar sesión</a></li>                        
+                        {% endif %}
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'AppCoder/assets/img/cleaning.jpg'%}" alt="..." />
+                    <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                        <h2 class="section-heading mb-4">
+
+                            {% block navegacion %} 
+         
+
+                            {% endblock %}
+                            
+                        </h2>
+
+                            {% block presentacion %} 
+            
+
+                            {% endblock %}   
+                                                     
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+            <footer class="footer text-faded text-center py-5">
+            <div class="container"><p class="m-0 small">Copyright &copy; Sitio Web 2023 -> By Cristian Tessa</p></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'AppCoder/js/scripts.js' %}"></script>
+    </body>
+</html>

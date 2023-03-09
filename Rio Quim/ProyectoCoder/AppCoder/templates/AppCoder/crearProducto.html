@@ -1,0 +1,30 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+{% block titulo %} 
+
+
+RIO - QUIM
+
+
+{% endblock %}
+
+{% block presentacion %} 
+
+{% block formulario %}
+
+    <form action="" method="POST"> {% csrf_token %}
+
+        <table>
+            
+            {{form1.as_table}}
+    
+        </table>
+    
+        <input type="submit" value="Enviar">
+    </form>
+
+{% endblock%}
+{% endblock%}

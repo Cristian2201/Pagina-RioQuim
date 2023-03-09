@@ -1,0 +1,27 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+{% block titulo %} 
+
+
+RIO - QUIM
+
+
+{% endblock %}
+
+{% block presentacion %}
+<body>
+
+    <form action="" method="POST"> {% csrf_token%}
+
+        <P>¿Estás seguro que quieres borrar este producto?</P>
+
+        <input style="color:blue" type="submit" value="Si" >
+        
+    </form>
+    
+</body>
+
+{% endblock %}

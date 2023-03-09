@@ -1,0 +1,27 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+{% block titulo %} 
+
+
+RIO - QUIM
+
+
+{% endblock %}
+
+
+{% block presentacion %} 
+
+<form action="/AppCoder/resultados/" method="GET"> 
+    <P>BUSCADOR DE PRODUCTOS</P>
+        
+    <input type="text" name="elemento" id = "elemento">
+
+    <input type="submit" value="Buscar">
+
+</form>
+
+
+{% endblock %}

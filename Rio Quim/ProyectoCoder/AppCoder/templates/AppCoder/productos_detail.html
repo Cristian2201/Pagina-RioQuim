@@ -1,0 +1,25 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+{% block titulo %} 
+
+
+RIO - QUIM
+
+
+{% endblock %}
+
+{% block presentacion %}
+<body>
+
+    <P> Nombre: {{productos.elemento}} </P>
+    <P> Precio: {{productos.precio}} </P>
+
+    <a href="{% url 'ProductosLeer' %}"> Regresar </a>
+    
+</body>
+
+
+{% endblock %}

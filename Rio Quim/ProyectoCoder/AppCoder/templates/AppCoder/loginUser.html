@@ -1,0 +1,35 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %} 
+
+
+RIO - QUIM
+
+<br>
+
+Aca podemos iniciar sesion!!! 
+
+
+{% endblock %}
+
+{% block presentacion %}
+                           
+
+<body>
+    <form action="" method="POST">{% csrf_token %}
+        
+        <p>Inicia sesión para poder crear, ver, editar y borrar los productos de nuestra tienda!!!</p>
+
+        {{formulario.as_p}}
+
+        <button type= "submit"> Iniciar sesión</button>
+
+
+    </form>
+<body>
+
+{% endblock %}

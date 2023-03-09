@@ -1,0 +1,38 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+{% block titulo %} 
+
+
+RIO - QUIM
+
+
+{% endblock %}
+
+{% block presentacion %}
+<a href="{% url 'ProductoCreado' %}">  Crear Producto</a>
+<body>
+    
+    {% for productos in inventario %}
+    
+    <p>Producto: {{productos.elemento}} </p>
+    <p>Precio: {{productos.precio}} </p>
+
+    <button>
+
+        <a href="{% url 'ProductoEliminar' productos.id %}">  Eliminar Producto</a>
+        
+    </button>
+    <button>
+
+        <a href="{% url 'ProductoEditar' productos.id %}">  Editar Producto</a>
+
+    </button>
+
+    {% endfor %}
+
+</body>
+
+{% endblock %}

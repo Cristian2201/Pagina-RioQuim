@@ -1,0 +1,36 @@
+{% extends "AppCoder/padre.html" %}
+
+
+{% load static %}
+
+
+{% block titulo %} 
+
+
+RIO - QUIM
+
+<br>
+
+Aca podemos agregar un avatar!!! 
+
+
+{% endblock %}
+
+{% block presentacion %}
+                           
+
+<body>
+    <form action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        
+        <p>Seleciona una imagen de tu equipo, para subir a tu perfil!!!</p>
+
+        {{formulario.as_p}}
+
+        <button type= "submit"> Subir</button>
+
+
+    </form>
+<body>
+
+
+{% endblock %}

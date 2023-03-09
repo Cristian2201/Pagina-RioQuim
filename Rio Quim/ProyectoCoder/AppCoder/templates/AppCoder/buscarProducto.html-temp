@@ -1,0 +1,17 @@
+
+{% block ResultadoBusqueda %}
+
+<body>
+
+    <form action="/AppCoder/resultados/" method="GET">
+        
+        <input type="text" name="elemento" id="elemento">
+
+        <input type="submit" value="Buscar pro">
+
+
+    </form>
+    
+</body>
+
+{% endblock %}

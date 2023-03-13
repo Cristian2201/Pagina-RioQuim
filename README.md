@@ -1,105 +1,30 @@
 # Pagina-RioQuim
+Hola que tal, mi nombre es Cristian Tessa.
+Soy de Rio Cuarto - Cordoba - Argentina
+Soy estudiantes de Programacion(Python) y esta es mi primera pagina web!!!
 
-Guide table based on preferred lenguage | Tabla de guía según el idioma.
-ENG
-ES
-ENG
-Instructions to run this project locally
-Open Git Bash for Windows or a terminal for Linux/Unix.
-Create working directory for course project.
-cd
-mkdir -p folder_name/folder_name_projects
-cd folder_name/folder_name_projects
-Clone the project.
-git clone https://github.com/Cristian2201/Pagina-RioQuim
+La siguiente pagina que desarrolle, tome como plantilla un modelo de boot strap.
+La cual la pagina original esta en la carpeta AppCoder/Static
+Y realice una copia en el html, llamado padre, donde hago las modificaciones. Las cuales explicare mas adelante.
 
-cd Python\CoderHouse\Clase 15\ProyectoCoder\AppCoder
-Create and activate virtual environment. (Windows)
-python -m venv venv
-.\venv\Scripts\activate
-(Linux)
 
-python3 -m venv venv
-source venv/bin/activate
-Install the project dependencies.
-pip install -r requirements.txt
-Create database from migrations.
-python manage.py makemigrations
-python manage.py migrate
-Create super-user.
-python manage.py createsuperuser
-Input Username, Email address(optional) y Password
+Luego en el archivo views.py, estan las vistas de inicio, tienda, busqueda, productos y nosotros.
+Y en el archivo models.py, estan las clases tienda (no tiene atributos),nosotros (no tiene atributos), busqueda y productos
+tiene 2 atributos, llamados elemento y precio, que me sirven para dar de alta el producto y buscarlos dentro de la pagina.
+Donde detallo cada uno a continuacion:
 
-Create static.
-python manage.py collectstatic
-Run project, django server exposes service by localhost on port 8000 by default http://127.0.0.1:8000/
-python manage.py runserver
-Useful commands for Django
-Create project
-django-admin startproject <name_project> .
-Create an application in a project
-python manage.py startapp <name_app>
-Update the project database with changes in our models
-The migrations are created in two steps, one per application, and then the tables are created in the database.
+La pestaña inicio tiene un inicio.html en donde el cual esta el mensaje de bienvenida y un mensaje, luego que el usuario inicia sesion.
+Su url esta configurado con al path " ", al cual se puede acceder con http://127.0.0.1:8000/AppCoder/
 
-python manage.py makemigrations
-python manage.py migrate
-Basic commands for Git
-Git clone
-Git clone is a command to download existing source code from a remote repository (like Github, for example). Download the latest version of your project to a repository and save it to your computer.
+Luego la pestaña tienda y nosotros es meramente informativo, donde esta el tienda.html y nosotros.html que tiene info del local.
+Sus urls son tienda y nosotros.
 
-git clone <https://link-of-repository>
-Git branch
-Creating a new branch.
-git branch <name_branch>
-Display of branches.
-git branch
-git branch --list
-Delete a branch.
-git branch -d <branch-name>
-Git checkout
-To switch to an existing branch.
-git checkout <branch-name>
-To create and switch to that branch at the same time.
-git checkout -b <branch-name>
-Git status
-The git status command gives us all the necessary information about the current branch:
+En la pagina para poder ver los productos, hay que regustrase y luego iniciar sesion. Donde ademas se puede agregar una imagen o avatar 
+en el usuario logeado.
 
-Whether the current branch is up to date-
-If there is something to confirm, send or receive (pull).
-If there are files in preparation (staged), without preparation (unstaged) or that are not being tracked (untracked).
-If there are files created, modified or deleted status.
-git status
-git add
-Add a single file.
-git add <file_name>
-Add everything at once.
-git add -A
-git add .
-git add *
-Important: The git add command stores file changes in the stage, however they are not yet checked in to the repository until the git commit commit command is used to log a checkpoint of changes.
+Muchas gracias.
 
-Git commit
-Git commit establishes a checkpoint that you can return to later if necessary. It is highly recommended to write a short message to explain what we have developed or modified in the source code.
 
-git commit -m "commit message"
-Git push
-After you have committed your changes, the next step you want to take is to push your changes to the remote server. Git push pushes your commits to the remote repository.
-
-git push <remote-name> <branch-name>
-git push origin <branch-name>
-Important: Git push only uploads changes that have been committed with a git commit.
-
-Git pull
-The git pull command is used to receive updates from the remote repository.
-
-git pull <remote-name> <branch-name>
-git pull origin main
-Git remote
-It is used to change the url address of the repository that we have by origin.
-
-git remote set-url origin <url_of_repository_on_GitHub>
-ES
 Instrucciones para ejecutar este proyecto en local
 Abrir Git Bash para Windows o una terminal para Linux/Unix.
 
